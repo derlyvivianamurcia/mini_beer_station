@@ -67,6 +67,7 @@ export default {
   width: 100%;
   background: #000000;
   color: #fff;
+  z-index: 1;
 }
 
 .navbar-container {
@@ -105,29 +106,6 @@ button {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
-}
-
-button {
-  padding: 8px 19px;
-  margin-right: 20px;
-  background-color: rgba(0, 136, 169, 1);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: all ease-in-out 0s;
-}
-
-button:hover a {
-  color: #0088a9;
-}
-
-button:hover {
-  background: #fff;
-  color: #0088a9;
-}
-
-.navbar a:hover {
-  color: #0088a9;
 }
 
 @media (max-width: 768px) {
@@ -176,7 +154,7 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     img.img-logo {
-      height: 9vh;
+      height: 7vh;
     }
   }
   .container-items{
