@@ -9,25 +9,33 @@
           <span class="line line3"></span>
         </div>
         <ul class="menu-items">
-          <li><a href="#">Option</a></li>
-          <li><a href="#">Option</a></li>
-          <button><a href="#">Option</a></button>
+          <li><a href="#"><img :src="IconMagnifier"  alt="Icon Magnifier"></a></li>
+          <li><a href="#"><img :src="IconCart" alt="Icon cart"></a></li>
         </ul>
         <h1 class="logo">BEER Station</h1>
         <div class="container-img">
           <img class="img-logo" :src="IconLogo" alt="logo" />
         </div>
+       <div class="container-items">
+        <ul class="items">
+          <li><a href="#"><img :src="IconMagnifier"  alt="Icon Magnifier"></a></li>
+          <li><a href="#"><img :src="IconCart" alt="Icon cart"></a></li>
+        </ul>
+      </div>
       </div>
     </nav>
   </header>
 </template>
 <script>
 import IconLogo from "../../assets/icons/logo.png";
-
+import IconMagnifier from "../../assets/icons/lupa.png";
+import IconCart from "../../assets/icons/carro-de-la-carretilla.png"
 export default {
   data() {
     return {
       IconLogo: IconLogo,
+      IconMagnifier: IconMagnifier,
+      IconCart: IconCart,
     };
   },
 };
@@ -87,6 +95,9 @@ button {
   font-size: 1.1rem;
   display: flex;
   align-items: center;
+}
+.container-items{
+  display: none;
 }
 
 .navbar a {
@@ -166,6 +177,23 @@ button:hover {
     align-items: center;
     img.img-logo {
       height: 9vh;
+    }
+  }
+  .container-items{
+    position: absolute;
+    top: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    right: 11px;
+    ul{
+      list-style: none;
+      display: flex;
+      img{
+        height: 4vh;
+      }
     }
   }
   .navbar-container .hamburger-lines .line {
