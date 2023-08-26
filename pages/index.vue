@@ -7,6 +7,7 @@
         <Products />
       </div>
     </div>
+    <Footer/>
   </div>
 </template>
 
