@@ -14,30 +14,36 @@
         <h2>
           <strong>Filtros</strong>
         </h2>
-        <div v-for="(filter, i) in filters" :key="i">
-          <label
-            >{{ filter.name
-            }}<input
-              type="checkbox"
-              id="cbox1"
-              :value="filter.name"
-              @input="handleInput"
-            /> </label
-          ><br />
-        </div>
+        <form action="" id="formElement">
+          <div v-for="(filter, i) in filters" :key="i">
+            <label
+              >{{ filter.name
+              }}<input
+                type="checkbox"
+                :id="filter.id"
+                :value="filter.name"
+                @input="handleInput"
+              /> </label
+            ><br />
+          </div>
+        </form>
       </div>
       <div class="container-btns">
-        <button v-if="disabled" class="container-clear" disabled>
+        <button
+          v-if="disabled"
+          class="container-clear"
+          disabled
+          v-on:click.prevent="decrement"
+        >
           <h1>Limpiar</h1>
         </button>
-        <button v-else class="container-clear" v-on:click.prevent="decrement"
->
+        <button v-else class="container-clear" v-on:click.prevent="decrement">
           <h1>Limpiar</h1>
         </button>
         <button class="container-filter">
           <h1>Filtrar</h1>
           <img class="button-filter" :src="IconFilter" alt="Icon Filter" />
-        <span class="icon-button__badge">{{this.quantity}}</span>
+          <span class="icon-button__badge">{{ this.quantity }}</span>
         </button>
       </div>
     </div>
@@ -78,11 +84,21 @@ export default {
         this.disabled = false;
       }
     },
-    decrement(event) {
-      if (event.target.value === event.target.value) {
+    decrement() {
+      if (this.quantity > 0) {
         this.quantity--;
-        this.disabled = true;
+        document
+          .querySelectorAll("#formElement input[type=checkbox]")
+          .forEach(function (checkElement) {
+            checkElement.checked = false;
+          });
+          this.quantityFunction;
       }
+    },
+  },
+  watch: {
+    quantityFunction: function (val) {
+      this.quantity = val + " " + this.quantity;
     },
   },
 };
@@ -183,16 +199,16 @@ export default {
           padding: 5px;
         }
         .icon-button__badge {
-    top: 0;
-    width: 25px;
-    height: 25px;
-    background: white;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
+          top: 0;
+          width: 25px;
+          height: 25px;
+          background: white;
+          color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+        }
       }
     }
     .header-dropdown {
@@ -217,13 +233,12 @@ export default {
       width: 100%;
       box-shadow: 0px 5px 5px #c7c1c1;
       .header-dropdown {
-      margin-top: 121%;
+        margin-top: 121%;
       }
       .information_dropdown {
         width: 100%;
         padding: 0px 10% !important;
       }
-
     }
   }
 }
