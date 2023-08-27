@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <button class="btn" id="btn1">Agregar</button>
+    <button class="btn" >Agregar</button>
   </div>
 </template>
 
@@ -59,6 +59,7 @@ export default {
     font-size: 1.1rem;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: gray;
   }
   .product-price {
     font-size: 1.1rem;
@@ -74,7 +75,7 @@ export default {
   font-size: 1rem;
   font-weight: bold;
   border: solid 2px #43414100;
-  border-radius: 10px;
+  border-bottom-left-radius: 14%;
   text-transform: uppercase;
   display: block;
   -o-object-fit: cover;
