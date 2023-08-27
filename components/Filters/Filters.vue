@@ -5,16 +5,6 @@
       <img class="button-filter" :src="IconFilter" alt="Icon Filter" />
     </a>
     <div v-if="openMenu" id="dropdown">
-      <div id="modal">
-        <a href="#cerrar"></a>
-        <div id="modalContent">
-          <a href="#cerrar">X</a>
-          <h1 style="color: #f7be68; text-align: center">
-            Políticas de privacidad
-          </h1>
-          <p style="text-align: center">Contenido</p>
-        </div>
-      </div>
       <div class="header-dropdown">
         <a class="image-dropclose" @click="closeMenu"
           ><img src="../../assets/icons/close.png" alt="Image close" />
@@ -30,19 +20,24 @@
             }}<input
               type="checkbox"
               id="cbox1"
-              value="first_checkbox"
+              :value="filter.name"
+              @input="handleInput"
             /> </label
           ><br />
         </div>
       </div>
       <div class="container-btns">
-        <a class="container-clear">
+        <button v-if="disabled" class="container-clear" disabled>
           <h1>Limpiar</h1>
-        </a>
-        <a class="container-filter">
+        </button>
+        <button v-else class="container-clear">
+          <h1>Limpiar</h1>
+        </button>
+        <button class="container-filter">
           <h1>Filtrar</h1>
           <img class="button-filter" :src="IconFilter" alt="Icon Filter" />
-        </a>
+        <span class="icon-button__badge"> 0</span>
+        </button>
       </div>
     </div>
   </section>
@@ -57,6 +52,10 @@ export default {
       openMenu: false,
       numberWhatsapp: 0,
       IconFilter: IconFilter,
+      disabled: true,
+      data: {
+        category: null,
+      },
     };
   },
   computed: {
@@ -71,67 +70,16 @@ export default {
     closeMenu() {
       this.openMenu = false;
     },
+    handleInput(event) {
+      if (event.target.value === event.target.value) {
+        this.disabled = false;
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-#modalContent {
-  position: absolute;
-  top: 30%;
-  left: 35%;
-  z-index: 6;
-  float: left;
-  margin: -2% 0px 0px -150px;
-  width: 700px;
-  color: #888888;
-  line-height: 22px;
-  padding: 15px;
-  border-radius: 5px;
-  background: #ffffff;
-  border: 1px solid #f7be68;
-  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.22);
-}
-
-#modal {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 5;
-  float: left;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  display: none;
-  opacity: 0;
-}
-
-#modal > a {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-  float: left;
-  width: 100%;
-  height: 100%;
-}
-
-:target {
-  display: block !important;
-  opacity: 1 !important;
-}
-
-#modalContent > a {
-  position: absolute;
-  top: -4px;
-  right: -4px;
-  color: #fff;
-  border-radius: 2px;
-  background: #f7be68;
-  padding: 10px;
-  font-size: 30px;
-  text-decoration: none;
-}
 .section-filter {
   position: fixed;
   bottom: 50%;
@@ -210,8 +158,6 @@ export default {
         border: 1px solid #ffffff;
         background-color: rgba(221, 222, 227, 0.903);
         z-index: 6;
-        padding: 10px 0px 0px 50px;
-        color: black;
         text-transform: uppercase;
         font-size: 0.8rem;
         font-family: "Poppins", sans-serif;
@@ -237,6 +183,17 @@ export default {
           height: 4vh;
           padding: 5px;
         }
+        .icon-button__badge {
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
       }
     }
     .header-dropdown {
