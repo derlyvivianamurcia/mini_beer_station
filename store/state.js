@@ -1,5 +1,13 @@
 
-import productCassels from "../assets/images/cassels_milk_stout.jpg"
+import productCassels from "../assets/images/cassels_milk_stout.jpg";
+import productCamba from "../assets/images/camba.jpg";
+import productVotus from "../assets/images/votus.jpg";
+import productParadise from "../assets/images/paradise.jpg";
+import productLoast from "../assets/images/lostabbey.png";
+import productRedrice from "../assets/images/redrice.jpg";
+import productTopa from "../assets/images/topatopa.JPG";
+import productBrune from "../assets/images/brune.jpg";
+
 export const state = () => ({
   products: [
     {
@@ -12,7 +20,7 @@ export const state = () => ({
     },
     {
       id: 2,
-      photos: productCassels,
+      photos: productCamba,
       name: "Camba Pale Ale",
       price: 85300,
       description: "La Souche Franc-Bois d'hiver. Cervea pale",
@@ -21,7 +29,7 @@ export const state = () => ({
     },
     {
       id: 3,
-      photos: productCassels,
+      photos: productVotus,
       name: "Votus Nº 001",
       price: 75000,
       description: "India Pale Ale del Año 2019. Nº 0001 Red IPA.",
@@ -29,7 +37,7 @@ export const state = () => ({
     },
     {
       id: 4,
-      photos: productCassels,
+      photos: productParadise,
       name: "Prairie Artisian",
       price: 85300,
       description: "Ales Prairie Noir Whiskey Barrel Aged Imperial ",
@@ -37,7 +45,7 @@ export const state = () => ({
     },
     {
       id: 5,
-      photos: productCassels,
+      photos: productCamba,
       name: "Lost Abbey",
       price: 75000,
       description: "The Lost Abbey Citrus Sin American Wild ",
@@ -55,7 +63,7 @@ export const state = () => ({
     },
     {
       id: 7,
-      photos: productCassels,
+      photos: productRedrice,
       name: "Redrice",
       price: 85300,
       description: "Hitachino Nest Beer Red Rice Ale 330ml",
@@ -73,7 +81,7 @@ export const state = () => ({
     },
     {
       id: 9,
-      photos: productCassels,
+      photos: productTopa,
       name: "Topa Topa",
       price: 85300,
       description: "Cassels & Sons Brewing. Cerveza porter y stout",
@@ -82,7 +90,7 @@ export const state = () => ({
     },
     {
       id: 10,
-      photos: productCassels,
+      photos: productBrune,
       name: "Mira Brune Nº6",
       price: 375000,
       description: "Cassels & Sons Brewing. Cerveza porter y stout",
