@@ -36,7 +36,7 @@ export default {
   height: 378px;
 }
 .card-image {
-  height: 200px;
+  height: 243px;
   display: block;
   object-fit: cover;
 }
@@ -59,7 +59,9 @@ export default {
     font-size: 1.1rem;
     text-overflow: ellipsis;
     overflow: hidden;
+    width: 100px;
     color: gray;
+    white-space: nowrap;
   }
   .product-price {
     font-size: 1.1rem;
@@ -95,6 +97,11 @@ export default {
       font-family: "Poppins", sans-serif;
       width: auto;
     }
+    .product-description {
+      width: auto;
+      white-space: normal;
+    }
+
   }
   .btn {
     height: 29px;

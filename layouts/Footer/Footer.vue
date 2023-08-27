@@ -74,7 +74,6 @@ footer {
         text-transform: uppercase;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        padding: 5px 125px 35px;
       }
     }
     .container-two {
@@ -95,7 +94,7 @@ footer {
         }
       }
       img.icon-instagram {
-        padding: 20px;
+        padding: 5px;
         height: 10vh;
       }
       p {

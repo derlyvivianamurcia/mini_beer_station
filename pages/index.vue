@@ -30,7 +30,7 @@ export default {
 .grid-content {
   display: grid;
   grid-template-columns: 60% repeat(0, 1fr) 0;
-  padding: 100px 10px;
+  padding: 100px 0 0 0;
   .div-section {
     h1 {
       font-size: 3rem;

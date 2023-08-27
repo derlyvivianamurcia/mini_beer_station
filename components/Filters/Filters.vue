@@ -30,13 +30,14 @@
         <button v-if="disabled" class="container-clear" disabled>
           <h1>Limpiar</h1>
         </button>
-        <button v-else class="container-clear">
+        <button v-else class="container-clear" v-on:click.prevent="decrement"
+>
           <h1>Limpiar</h1>
         </button>
         <button class="container-filter">
           <h1>Filtrar</h1>
           <img class="button-filter" :src="IconFilter" alt="Icon Filter" />
-        <span class="icon-button__badge"> 0</span>
+        <span class="icon-button__badge">{{this.quantity}}</span>
         </button>
       </div>
     </div>
@@ -53,6 +54,7 @@ export default {
       numberWhatsapp: 0,
       IconFilter: IconFilter,
       disabled: true,
+      quantity: 0,
       data: {
         category: null,
       },
@@ -72,7 +74,14 @@ export default {
     },
     handleInput(event) {
       if (event.target.value === event.target.value) {
+        this.quantity++;
         this.disabled = false;
+      }
+    },
+    decrement(event) {
+      if (event.target.value === event.target.value) {
+        this.quantity--;
+        this.disabled = true;
       }
     },
   },
@@ -83,7 +92,7 @@ export default {
 .section-filter {
   position: fixed;
   bottom: 50%;
-  right: 128px;
+  left: 30%;
   z-index: 115;
   display: flex;
   justify-content: center;
@@ -91,19 +100,13 @@ export default {
   .container-buttonW {
     background-color: rgb(7, 41, 153);
     width: 100%;
-    height: 50px;
     z-index: 6;
-    padding: 2px;
     display: flex;
-    position: relative;
     color: white;
-    text-decoration: none;
     text-transform: uppercase;
     font-size: 0.8rem;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
-    justify-content: center;
-    bottom: 20px;
     h1 {
       padding: 7px 0px 0px 15px;
     }
@@ -121,15 +124,11 @@ export default {
     position: inherit;
     bottom: 0px;
     background: white;
-    box-shadow: 0px 0px 5px #c7c1c1;
-
     position: fixed;
-    top: 0px;
     left: 0px;
     z-index: 5;
     float: left;
-
-    background: rgba(0, 0, 0, 0.2);
+    background: rgb(0 0 0 / 62%);
 
     .information_dropdown {
       margin: auto;
@@ -197,6 +196,7 @@ export default {
       }
     }
     .header-dropdown {
+      margin-top: 72%;
       a.image-dropclose {
         justify-content: right;
         display: flex;
@@ -216,17 +216,18 @@ export default {
     #dropdown {
       width: 100%;
       box-shadow: 0px 5px 5px #c7c1c1;
+      .header-dropdown {
+      margin-top: 121%;
+      }
       .information_dropdown {
         width: 100%;
         padding: 0px 10% !important;
       }
-      .header-dropdown {
-        margin-top: 448px;
-        margin-left: 2%;
-      }
+
     }
   }
 }
+
 @media (min-width: 1024px) {
   .section-filter {
     bottom: 0%;
