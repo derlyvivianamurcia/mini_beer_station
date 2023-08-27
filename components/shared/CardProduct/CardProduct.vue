@@ -8,7 +8,7 @@
       <p class="product-description">{{ product.description }}</p>
       <div class="product-bottom-details">
         <div class="product-price">
-          <small>${{ product.price }}</small>
+          <small>{{ product.price  | FormatterPrice }}</small>
         </div>
       </div>
     </div>
@@ -17,12 +17,18 @@
 </template>
 
 <script>
+import FormatterPrice from "../Filters/formatterPrice";
+
 export default {
   name: "card-product",
   props: ["product"],
   data() {
     return {};
   },
+  filters: {
+    FormatterPrice,
+  },
+
 };
 </script>
 
