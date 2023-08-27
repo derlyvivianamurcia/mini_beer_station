@@ -6,21 +6,23 @@
         <h1>Cervezas</h1>
         <Products />
         <NextBtn/>
+        <Filters/>
       </div>
     </div>
-    <Footer/>
   </div>
 </template>
 
 <script>
 import Products from "../components/Products/Products.vue";
 import NextBtn from "../components/shared/NextBtn/NextBtn.vue";
+import Filters from "../components/Filters/Filters.vue"
 
 export default {
   name: "IndexPage",
   components: {
     Products,
-    NextBtn
+    NextBtn,
+    Filters
   },
 };
 </script>
