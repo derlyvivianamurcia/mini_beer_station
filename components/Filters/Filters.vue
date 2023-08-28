@@ -22,6 +22,7 @@
                 type="checkbox"
                 :id="filter.id"
                 :value="filter.name"
+                v-model="selected"
                 @input="handleInput"
               /> </label
             ><br />
@@ -40,8 +41,8 @@
         <button v-else class="container-clear" v-on:click.prevent="decrement">
           <h1>Limpiar</h1>
         </button>
-        <button class="container-filter">
-          <h1>Filtrar</h1>
+        <button class="container-filter" @click="filterProduct()"
+>          <h1>Filtrar</h1>
           <img class="button-filter" :src="IconFilter" alt="Icon Filter" />
           <span class="icon-button__badge">{{ this.quantity }}</span>
         </button>
@@ -57,10 +58,11 @@ export default {
   data() {
     return {
       openMenu: false,
-      numberWhatsapp: 0,
       IconFilter: IconFilter,
       disabled: true,
       quantity: 0,
+      product: '',
+       selected: [],
       data: {
         category: null,
       },
@@ -95,6 +97,11 @@ export default {
           this.quantityFunction;
       }
     },
+    filterProduct(){
+      this.$store.state.filters = this.product;
+      this.filters;
+      this.closeMenu();
+    }
   },
   watch: {
     quantityFunction: function (val) {
