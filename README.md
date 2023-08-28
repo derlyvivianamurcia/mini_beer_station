@@ -1,5 +1,44 @@
-# beer_store
+## Project Title
+Prueba técnica Mini Beer Station
+## Description 📋
 
+Mini Beer, es una app que le permite al usuario ver y consultar su producto de preferencia por filtros.
+
+## Enlace Project 📋
+
+URL: https://github.com/derlyvivianamurcia/mini_beer_station
+
+## Cloning a repository using the command line 💻 (Ejecutar la solución)
+
+1. En GitHub, visita la página principal del repositorio.
+
+2. Al lado del nombre del repositorio, haga clic en Clonar o descargar .
+
+3. Para clonar el repositorio utilizando HTTPS, en "Clonar con HTTPS", haga clic en . Para clonar el repositorio utilizando una clave SSH, incluido un certificado emitido por la autoridad de certificación SSH de su organización, haga clic en Usar SSH y luego haga clic en 📋.
+
+4. Abre Git Bash .
+
+5. Cambia el directorio de trabajo actual a la ubicación donde deseas que se clone el directorio.
+
+6. Escribe git clone, y luego pega la URL que copiaste en el Paso 2.
+
+$ git clone 
+
+7. Presiona Enter (Intro). Se creará tu clon local.
+
+8. npm run start
+
+## Installation 🔧
+
+Para comenzar a ejecutar la aplicación en NuxtJS debemos instalar algunas paquetes:
+
+Dependencias
+1. npm install 
+
+Ejecutar el servidor
+2. npm run dev
+
+# Mini Beer Station
 ## Build Setup
 
 ```bash
