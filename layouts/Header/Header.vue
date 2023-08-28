@@ -13,9 +13,11 @@
           <li><a href="#"><img :src="IconCart" alt="Icon cart"></a></li>
         </ul>
         <h1 class="logo">BEER Station</h1>
+        <router-link :to="'/'">
         <div class="container-img">
           <img class="img-logo" :src="IconLogo" alt="logo" />
         </div>
+      </router-link>
        <div class="container-items">
         <ul class="items">
           <li><a href="#"><img :src="IconMagnifier"  alt="Icon Magnifier"></a></li>

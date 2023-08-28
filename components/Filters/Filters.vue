@@ -41,11 +41,14 @@
         <button v-else class="container-clear" v-on:click.prevent="decrement">
           <h1>Limpiar</h1>
         </button>
+        <router-link :to="'/result-filter?name=' + this.results">
         <button class="container-filter" @click="filterProduct()"
 >          <h1>Filtrar</h1>
           <img class="button-filter" :src="IconFilter" alt="Icon Filter" />
           <span class="icon-button__badge">{{ this.quantity }}</span>
         </button>
+      </router-link>
+
       </div>
     </div>
   </section>
@@ -62,6 +65,7 @@ export default {
       disabled: true,
       quantity: 0,
       product: '',
+      results:'',
        selected: [],
       data: {
         category: null,
@@ -71,6 +75,9 @@ export default {
   computed: {
     filters() {
       return this.$store.state.filters;
+    },
+     filter() {
+      return this.$store.getters.filterProduct(this.$route.query.name);
     },
   },
   methods: {
@@ -82,6 +89,7 @@ export default {
     },
     handleInput(event) {
       if (event.target.value === event.target.value) {
+        this.results = event.target.value
         this.quantity++;
         this.disabled = false;
       }
